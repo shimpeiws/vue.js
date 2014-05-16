@@ -6,20 +6,20 @@
          <link rel="stylesheet" type="text/css" href="css/main.css" media="all">
          <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
          <script type='text/javascript' src='http://cdnjs.cloudflare.com/ajax/libs/vue/0.10.4/vue.js'></script>
-          <script type="text/javascript" src="js/todo_list.js"></script>
+         <script type="text/javascript" src="js/todo_list.js"></script>
       </head>
       <body>
       <div id="demo">
-    <h1>{{title | uppercase}}</h1>
-    <ul>
-        <li
-            v-repeat="todos"
-            v-on="click: done = !done"
-            class="{{done ? 'done' : ''}}"
-        >
-            {{content}}
-        </li>
-    </ul>
-</div>
+          <h1>{{title | uppercase}}</h1>
+          <ul>
+              <li
+                  v-repeat="todos"
+                  v-on="click: done = !done"
+                  class="{{done ? 'done' : ''}}"
+              >
+                  {{content}}
+              </li>
+          </ul>
+      </div>
       </body>
 </html>
