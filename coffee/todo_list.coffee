@@ -1,18 +1,31 @@
 $ ->
-  demo = new Vue({
-    el : '#demo'
+  viewModel = new Vue({
+    el : '#todoapp'
     data : {
       title : 'todos'
+      forms : {
+        inputTitle : ''
+      }
       todos : [
         {
-          done : true
+          done : false
           content : 'Learn JavaScript'
         }
-        {
-          done : false
-          content : 'Learn vue.js'
-        }
       ]
+    }
+    methods : {
+      entered : (event)->
+        self = this
+        $data = self.$data
+        $forms = $data.forms
+        $todos = $data.todos
+        console.log($forms.inputTitle)
+        $todos = $todos.push({
+          done: false
+          content: $forms.inputTitle
+        })
+        $forms.inputTitle = ''
+        return
     }
   })
   return

@@ -1,19 +1,34 @@
 (function() {
   $(function() {
-    var demo;
-    demo = new Vue({
-      el: '#demo',
+    var viewModel;
+    viewModel = new Vue({
+      el: '#todoapp',
       data: {
         title: 'todos',
+        forms: {
+          inputTitle: ''
+        },
         todos: [
           {
-            done: true,
-            content: 'Learn JavaScript'
-          }, {
             done: false,
-            content: 'Learn vue.js'
+            content: 'Learn JavaScript'
           }
         ]
+      },
+      methods: {
+        entered: function(event) {
+          var $data, $forms, $todos, self;
+          self = this;
+          $data = self.$data;
+          $forms = $data.forms;
+          $todos = $data.todos;
+          console.log($forms.inputTitle);
+          $todos = $todos.push({
+            done: false,
+            content: $forms.inputTitle
+          });
+          $forms.inputTitle = '';
+        }
       }
     });
   });
