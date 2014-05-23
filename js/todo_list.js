@@ -8,21 +8,22 @@
         forms: {
           inputTitle: ''
         },
-        todos: [
-          {
-            done: false,
-            content: 'Learn JavaScript'
-          }
-        ]
+        todos: [],
+        showLists: true
       },
       methods: {
         entered: function(event) {
-          var $data, $forms, $todos, self;
+          var $data, $forms, $showLists, $todos, self;
           self = this;
           $data = self.$data;
           $forms = $data.forms;
           $todos = $data.todos;
+          $showLists = $data.showLists;
+          if ($showLists) {
+            $showLists = false;
+          }
           console.log($forms.inputTitle);
+          console.log($showLists);
           $todos = $todos.push({
             done: false,
             content: $forms.inputTitle

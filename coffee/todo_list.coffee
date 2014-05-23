@@ -6,12 +6,8 @@ $ ->
       forms : {
         inputTitle : ''
       }
-      todos : [
-        {
-          done : false
-          content : 'Learn JavaScript'
-        }
-      ]
+      todos : []
+      showLists : true
     }
     methods : {
       entered : (event)->
@@ -19,7 +15,10 @@ $ ->
         $data = self.$data
         $forms = $data.forms
         $todos = $data.todos
+        $showLists = $data.showLists
+        $showLists = false if $showLists
         console.log($forms.inputTitle)
+        console.log($showLists)
         $todos = $todos.push({
           done: false
           content: $forms.inputTitle

@@ -16,13 +16,15 @@
           </header>
           
           <section id="main" style="display: block;">
-          <ul>
-              <li
-                  v-repeat="todos"
-              >
-                  {{content}}
-              </li>
-          </ul>
+            <div v-show="showLists">
+              <ul>
+                  <li
+                      v-repeat="todos"
+                  >
+                      {{content}}
+                  </li>
+              </ul>
+            </div>
           </section>
       </div>
       </body>
